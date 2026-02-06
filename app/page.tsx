@@ -614,15 +614,24 @@ export default function Home() {
           <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-[#FF6B6B]/20 rotate-12 animate-bounce" style={{ animationDelay: '1.5s' }}></div>
         </div>
 
-        {/* Header with Login Button */}
+        {/* Header with Login/Dashboard Button */}
         <div className="relative z-10 w-full p-6">
           <div className="max-w-6xl mx-auto flex justify-end">
-            <Button
-              onClick={() => setCurrentScreen('login')}
-              className="rounded-[20px] bg-white text-[#FF6B6B] border-2 border-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white shadow-[4px_4px_0px_#4ECDC4] hover:shadow-[6px_6px_0px_#4ECDC4] transition-all px-6 py-2 font-fredoka"
-            >
-              Login
-            </Button>
+            {!isLoggedIn ? (
+              <Button
+                onClick={() => setCurrentScreen('login')}
+                className="rounded-[20px] bg-white text-[#FF6B6B] border-2 border-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white shadow-[4px_4px_0px_#4ECDC4] hover:shadow-[6px_6px_0px_#4ECDC4] transition-all px-6 py-2 font-fredoka"
+              >
+                Login
+              </Button>
+            ) : (
+              <Button
+                onClick={() => setCurrentScreen('dashboard')}
+                className="rounded-[20px] bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] text-white hover:from-[#ff5252] hover:to-[#3db8b0] shadow-[4px_4px_0px_#FFD93D] hover:shadow-[6px_6px_0px_#FFD93D] transition-all px-6 py-2 font-fredoka"
+              >
+                Go to Dashboard
+              </Button>
+            )}
           </div>
         </div>
 
@@ -650,11 +659,11 @@ export default function Home() {
 
               {/* CTA Button */}
               <Button
-                onClick={() => setCurrentScreen('onboarding')}
+                onClick={() => setCurrentScreen(isLoggedIn ? 'dashboard' : 'login')}
                 className="rounded-[25px] bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] hover:from-[#ff5252] hover:to-[#3db8b0] shadow-[8px_8px_0px_#FFD93D] hover:shadow-[12px_12px_0px_#FFD93D] transition-all px-12 py-6 text-xl font-fredoka tracking-wider animate-slide-up"
                 style={{ animationDelay: '0.6s' }}
               >
-                Start Your Journey
+                {isLoggedIn ? 'Go to Dashboard' : 'Start Your Journey'}
                 <ArrowRight className="w-6 h-6 ml-2" />
               </Button>
             </div>
