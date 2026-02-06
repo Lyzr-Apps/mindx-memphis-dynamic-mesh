@@ -147,7 +147,7 @@ const ANSWER_OPTIONS = [
 ]
 
 export default function Home() {
-  const [currentScreen, setCurrentScreen] = useState<string>('onboarding')
+  const [currentScreen, setCurrentScreen] = useState<string>('home')
   const [userData, setUserData] = useState<UserData>({
     username: 'Anonymous User',
     points: 0,
@@ -429,20 +429,12 @@ export default function Home() {
               completedTasks: [...prev.completedTasks, selectedTask.task_title]
             }))
 
-            // Show success
+            // Show success modal
             setTaskSuccess({
               show: true,
               points,
-              message: verificationData.feedback_message || 'Great job!'
+              message: verificationData.feedback_message || 'Great job! Keep up the amazing work on your wellness journey!'
             })
-
-            // Reset
-            setTimeout(() => {
-              setTaskSuccess({ show: false, points: 0, message: '' })
-              setSelectedTask(null)
-              setUploadedImage(null)
-              setImagePreview(null)
-            }, 3000)
           }
         }
       }
@@ -504,6 +496,118 @@ export default function Home() {
   }
 
   // Render screens
+  const renderHome = () => {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-[#F8F8FF] via-[#FFD93D]/10 to-[#4ECDC4]/10 overflow-hidden">
+        {/* Animated Background Shapes */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-[#FF6B6B]/20 rounded-full animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-[#4ECDC4]/20 rotate-45 animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute bottom-40 left-1/4 w-40 h-40 bg-[#FFD93D]/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-[#FF6B6B]/20 rotate-12 animate-bounce" style={{ animationDelay: '1.5s' }}></div>
+        </div>
+
+        <div className="relative z-10 min-h-screen flex items-center justify-center p-4">
+          <div className="max-w-6xl w-full">
+            <div className="text-center mb-12 animate-fade-in">
+              {/* Logo/Icon */}
+              <div className="inline-block mb-6">
+                <div className="w-24 h-24 mx-auto bg-gradient-to-br from-[#FF6B6B] to-[#4ECDC4] rounded-[25px] shadow-[8px_8px_0px_#FFD93D] flex items-center justify-center transform hover:scale-105 transition-transform">
+                  <Zap className="w-12 h-12 text-white" />
+                </div>
+              </div>
+
+              {/* Hero Text */}
+              <h1 className="font-fredoka text-6xl md:text-7xl text-[#FF6B6B] tracking-wider mb-4 animate-slide-up">
+                mindX
+              </h1>
+              <p className="font-fredoka text-2xl md:text-3xl text-[#4ECDC4] tracking-wide mb-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                Your Mental Wellness Companion
+              </p>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+                Culturally-intelligent AI support designed for Indian students and professionals.
+                Build healthy habits, connect with peers, and thrive on your wellness journey.
+              </p>
+
+              {/* CTA Button */}
+              <Button
+                onClick={() => setCurrentScreen('onboarding')}
+                className="rounded-[25px] bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] hover:from-[#ff5252] hover:to-[#3db8b0] shadow-[8px_8px_0px_#FFD93D] hover:shadow-[12px_12px_0px_#FFD93D] transition-all px-12 py-6 text-xl font-fredoka tracking-wider animate-slide-up"
+                style={{ animationDelay: '0.6s' }}
+              >
+                Start Your Journey
+                <ArrowRight className="w-6 h-6 ml-2" />
+              </Button>
+            </div>
+
+            {/* Feature Cards */}
+            <div className="grid md:grid-cols-4 gap-6 mt-16">
+              <Card className="border-0 shadow-[6px_6px_0px_#FF6B6B] rounded-[20px] bg-white/80 backdrop-blur-sm hover:shadow-[10px_10px_0px_#FF6B6B] transition-all transform hover:-translate-y-2 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 mx-auto bg-[#FF6B6B]/20 rounded-full flex items-center justify-center mb-4">
+                    <MessageCircle className="w-8 h-8 text-[#FF6B6B]" />
+                  </div>
+                  <h3 className="font-fredoka text-lg text-[#FF6B6B] mb-2">AI Support</h3>
+                  <p className="text-sm text-gray-600">Chat with Nirvana for culturally-aware mental health guidance</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-[6px_6px_0px_#4ECDC4] rounded-[20px] bg-white/80 backdrop-blur-sm hover:shadow-[10px_10px_0px_#4ECDC4] transition-all transform hover:-translate-y-2 animate-fade-in" style={{ animationDelay: '1s' }}>
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 mx-auto bg-[#4ECDC4]/20 rounded-full flex items-center justify-center mb-4">
+                    <Target className="w-8 h-8 text-[#4ECDC4]" />
+                  </div>
+                  <h3 className="font-fredoka text-lg text-[#4ECDC4] mb-2">Wellness Tasks</h3>
+                  <p className="text-sm text-gray-600">Complete personalized tasks and earn points for your progress</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-[6px_6px_0px_#FFD93D] rounded-[20px] bg-white/80 backdrop-blur-sm hover:shadow-[10px_10px_0px_#FFD93D] transition-all transform hover:-translate-y-2 animate-fade-in" style={{ animationDelay: '1.2s' }}>
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 mx-auto bg-[#FFD93D]/20 rounded-full flex items-center justify-center mb-4">
+                    <Flame className="w-8 h-8 text-[#FF6B6B]" />
+                  </div>
+                  <h3 className="font-fredoka text-lg text-[#FF6B6B] mb-2">Soul Sprints</h3>
+                  <p className="text-sm text-gray-600">Join gamified challenges and build lasting wellness habits</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-[6px_6px_0px_#FF6B6B] rounded-[20px] bg-white/80 backdrop-blur-sm hover:shadow-[10px_10px_0px_#FF6B6B] transition-all transform hover:-translate-y-2 animate-fade-in" style={{ animationDelay: '1.4s' }}>
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 mx-auto bg-[#4ECDC4]/20 rounded-full flex items-center justify-center mb-4">
+                    <Users className="w-8 h-8 text-[#4ECDC4]" />
+                  </div>
+                  <h3 className="font-fredoka text-lg text-[#4ECDC4] mb-2">Peer Pods</h3>
+                  <p className="text-sm text-gray-600">Connect anonymously with peers facing similar challenges</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Stats Section */}
+            <div className="mt-16 text-center">
+              <div className="inline-flex gap-8 bg-white/80 backdrop-blur-sm p-8 rounded-[25px] shadow-[8px_8px_0px_#4ECDC4] animate-fade-in" style={{ animationDelay: '1.6s' }}>
+                <div className="text-center">
+                  <p className="font-fredoka text-4xl text-[#FF6B6B] mb-1">24/7</p>
+                  <p className="text-sm text-gray-600">AI Support</p>
+                </div>
+                <div className="w-px bg-gray-200"></div>
+                <div className="text-center">
+                  <p className="font-fredoka text-4xl text-[#4ECDC4] mb-1">100%</p>
+                  <p className="text-sm text-gray-600">Private & Safe</p>
+                </div>
+                <div className="w-px bg-gray-200"></div>
+                <div className="text-center">
+                  <p className="font-fredoka text-4xl text-[#FFD93D] mb-1">India</p>
+                  <p className="text-sm text-gray-600">Culturally Aware</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   const renderOnboarding = () => {
     const currentQuestion = onboardingStep < 9
       ? PHQ9_QUESTIONS[onboardingStep]
@@ -857,6 +961,11 @@ export default function Home() {
             </Button>
           </div>
         </div>
+
+        {/* ElevenLabs Voice Widget */}
+        <div className="fixed bottom-4 right-4 z-50">
+          <elevenlabs-convai agent-id="agent_4601k53mbg0eebg82j06yprcshc8"></elevenlabs-convai>
+        </div>
       </div>
     )
   }
@@ -1046,15 +1155,46 @@ export default function Home() {
 
           {/* Success Animation */}
           {taskSuccess.show && (
-            <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-              <Card className="w-full max-w-md border-0 shadow-[12px_12px_0px_#FFD93D] rounded-[25px] bg-white">
-                <CardContent className="text-center py-12">
-                  <div className="text-6xl mb-4">🎉</div>
-                  <h2 className="font-fredoka text-3xl text-[#4ECDC4] mb-2">Task Completed!</h2>
-                  <div className="text-5xl font-fredoka text-[#FF6B6B] my-4">
-                    +{taskSuccess.points} pts
+            <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-50 backdrop-blur-sm">
+              <Card className="w-full max-w-md border-0 shadow-[16px_16px_0px_#FFD93D] rounded-[25px] bg-white animate-bounce-in">
+                <CardContent className="text-center py-12 px-8">
+                  <div className="relative mb-6">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-32 h-32 bg-[#FFD93D]/20 rounded-full animate-ping"></div>
+                    </div>
+                    <div className="relative flex items-center justify-center">
+                      <CheckCircle className="w-24 h-24 text-[#4ECDC4]" />
+                    </div>
                   </div>
-                  <p className="text-gray-600">{taskSuccess.message}</p>
+                  <h2 className="font-fredoka text-4xl text-[#4ECDC4] mb-4 tracking-wider">Task Completed!</h2>
+                  <div className="bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-[20px] p-6 mb-4">
+                    <div className="text-6xl font-fredoka text-white mb-2">
+                      +{taskSuccess.points}
+                    </div>
+                    <p className="text-white text-lg font-medium">Points Earned</p>
+                  </div>
+                  <p className="text-gray-600 text-lg mb-6">{taskSuccess.message}</p>
+                  <div className="flex items-center justify-center gap-4 text-sm">
+                    <div className="flex items-center gap-2 bg-[#FFD93D]/20 px-4 py-2 rounded-[15px]">
+                      <Trophy className="w-4 h-4 text-[#FF6B6B]" />
+                      <span className="font-medium">Total: {userData.points} pts</span>
+                    </div>
+                    <div className="flex items-center gap-2 bg-[#4ECDC4]/20 px-4 py-2 rounded-[15px]">
+                      <Award className="w-4 h-4 text-[#4ECDC4]" />
+                      <span className="font-medium">Level {userData.level}</span>
+                    </div>
+                  </div>
+                  <Button
+                    onClick={() => {
+                      setTaskSuccess({ show: false, points: 0, message: '' })
+                      setSelectedTask(null)
+                      setUploadedImage(null)
+                      setImagePreview(null)
+                    }}
+                    className="mt-6 rounded-[20px] bg-[#FF6B6B] hover:bg-[#ff5252] shadow-[4px_4px_0px_#4ECDC4] px-8 py-3 text-lg"
+                  >
+                    Awesome!
+                  </Button>
                 </CardContent>
               </Card>
             </div>
@@ -1466,6 +1606,7 @@ export default function Home() {
   }
 
   // Main render
+  if (currentScreen === 'home') return renderHome()
   if (currentScreen === 'onboarding') return renderOnboarding()
   if (currentScreen === 'dashboard') return renderDashboard()
   if (currentScreen === 'nirvana') return renderNirvana()
@@ -1474,5 +1615,5 @@ export default function Home() {
   if (currentScreen === 'pod') return renderPod()
   if (currentScreen === 'leaderboard') return renderLeaderboard()
 
-  return renderDashboard()
+  return renderHome()
 }
