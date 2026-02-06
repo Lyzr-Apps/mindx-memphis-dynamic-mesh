@@ -288,6 +288,7 @@ export default function Home() {
     if (loginUsername === 'demo' && loginPassword === '12345678') {
       setIsLoggedIn(true)
       setUserData(prev => ({ ...prev, username: 'Demo User' }))
+      setCurrentScreen('onboarding')
     } else {
       setLoginError('Invalid credentials. Use username: demo, password: 12345678')
     }
@@ -613,7 +614,19 @@ export default function Home() {
           <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-[#FF6B6B]/20 rotate-12 animate-bounce" style={{ animationDelay: '1.5s' }}></div>
         </div>
 
-        <div className="relative z-10 min-h-screen flex items-center justify-center p-4">
+        {/* Header with Login Button */}
+        <div className="relative z-10 w-full p-6">
+          <div className="max-w-6xl mx-auto flex justify-end">
+            <Button
+              onClick={() => setCurrentScreen('login')}
+              className="rounded-[20px] bg-white text-[#FF6B6B] border-2 border-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white shadow-[4px_4px_0px_#4ECDC4] hover:shadow-[6px_6px_0px_#4ECDC4] transition-all px-6 py-2 font-fredoka"
+            >
+              Login
+            </Button>
+          </div>
+        </div>
+
+        <div className="relative z-10 min-h-screen flex items-center justify-center p-4 -mt-20">
           <div className="max-w-6xl w-full">
             <div className="text-center mb-12 animate-fade-in">
               {/* Logo/Icon */}
@@ -1712,8 +1725,7 @@ export default function Home() {
   }
 
   // Main render
-  if (!isLoggedIn) return renderLogin()
-
+  if (currentScreen === 'login') return renderLogin()
   if (currentScreen === 'home') return renderHome()
   if (currentScreen === 'onboarding') return renderOnboarding()
   if (currentScreen === 'dashboard') return renderDashboard()
