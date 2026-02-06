@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Progress } from '@/components/ui/progress'
 import { callAIAgent, uploadFiles } from '@/lib/aiAgent'
-import { Loader2, Send, ArrowLeft, ArrowRight, Trophy, Flame, Target, MessageCircle, CheckCircle, Upload, X, Users, Clock, Award, TrendingUp, Zap } from 'lucide-react'
+import { Loader2, Send, ArrowLeft, ArrowRight, Trophy, Flame, Target, MessageCircle, CheckCircle, Upload, X, Users, Clock, Award, TrendingUp, Zap, Lock, User, AlertCircle } from 'lucide-react'
 
 // TypeScript interfaces from actual test responses
 interface NirvanaResponse {
@@ -147,6 +147,10 @@ const ANSWER_OPTIONS = [
 ]
 
 export default function Home() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [loginUsername, setLoginUsername] = useState('')
+  const [loginPassword, setLoginPassword] = useState('')
+  const [loginError, setLoginError] = useState('')
   const [currentScreen, setCurrentScreen] = useState<string>('home')
   const [userData, setUserData] = useState<UserData>({
     username: 'Anonymous User',
@@ -275,6 +279,19 @@ export default function Home() {
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [chatMessages])
+
+  // Login handler
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoginError('')
+
+    if (loginUsername === 'demo' && loginPassword === '12345678') {
+      setIsLoggedIn(true)
+      setUserData(prev => ({ ...prev, username: 'Demo User' }))
+    } else {
+      setLoginError('Invalid credentials. Use username: demo, password: 12345678')
+    }
+  }
 
   // Onboarding handlers
   const handleOnboardingAnswer = (value: number) => {
@@ -496,6 +513,95 @@ export default function Home() {
   }
 
   // Render screens
+  const renderLogin = () => {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-[#F8F8FF] via-[#FFD93D]/10 to-[#4ECDC4]/10 overflow-hidden flex items-center justify-center p-4">
+        {/* Animated Background Shapes */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-[#FF6B6B]/20 rounded-full animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-[#4ECDC4]/20 rotate-45 animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute bottom-40 left-1/4 w-40 h-40 bg-[#FFD93D]/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-[#FF6B6B]/20 rotate-12 animate-bounce" style={{ animationDelay: '1.5s' }}></div>
+        </div>
+
+        <div className="relative z-10 w-full max-w-md">
+          <Card className="border-0 shadow-[12px_12px_0px_#FF6B6B] rounded-[25px] bg-white/95 backdrop-blur-sm">
+            <CardHeader className="text-center pb-4">
+              {/* Logo */}
+              <div className="inline-block mx-auto mb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#FF6B6B] to-[#4ECDC4] rounded-[20px] shadow-[6px_6px_0px_#FFD93D] flex items-center justify-center">
+                  <Zap className="w-10 h-10 text-white" />
+                </div>
+              </div>
+              <CardTitle className="font-fredoka text-4xl text-[#FF6B6B] tracking-wider mb-2">
+                mindX
+              </CardTitle>
+              <p className="text-gray-600">Mental Wellness Platform</p>
+            </CardHeader>
+            <CardContent className="px-8 pb-8">
+              <form onSubmit={handleLogin} className="space-y-6">
+                {/* Username Input */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                    <User className="w-4 h-4 text-[#4ECDC4]" />
+                    Username
+                  </label>
+                  <Input
+                    type="text"
+                    value={loginUsername}
+                    onChange={(e) => setLoginUsername(e.target.value)}
+                    placeholder="Enter username"
+                    className="rounded-[20px] border-2 border-gray-200 focus:border-[#4ECDC4] h-12"
+                    required
+                  />
+                </div>
+
+                {/* Password Input */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                    <Lock className="w-4 h-4 text-[#FF6B6B]" />
+                    Password
+                  </label>
+                  <Input
+                    type="password"
+                    value={loginPassword}
+                    onChange={(e) => setLoginPassword(e.target.value)}
+                    placeholder="Enter password"
+                    className="rounded-[20px] border-2 border-gray-200 focus:border-[#FF6B6B] h-12"
+                    required
+                  />
+                </div>
+
+                {/* Error Message */}
+                {loginError && (
+                  <div className="bg-red-50 border-2 border-red-300 rounded-[15px] p-3 flex items-start gap-2">
+                    <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-red-700">{loginError}</p>
+                  </div>
+                )}
+
+                {/* Demo Credentials Info */}
+                <div className="bg-[#FFD93D]/20 border-2 border-[#FFD93D] rounded-[15px] p-3">
+                  <p className="text-sm text-gray-700 font-medium mb-1">Demo Credentials:</p>
+                  <p className="text-xs text-gray-600">Username: <span className="font-mono font-bold">demo</span></p>
+                  <p className="text-xs text-gray-600">Password: <span className="font-mono font-bold">12345678</span></p>
+                </div>
+
+                {/* Login Button */}
+                <Button
+                  type="submit"
+                  className="w-full rounded-[20px] bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] hover:from-[#ff5252] hover:to-[#3db8b0] shadow-[6px_6px_0px_#FFD93D] hover:shadow-[8px_8px_0px_#FFD93D] transition-all h-12 text-lg font-fredoka tracking-wider"
+                >
+                  Login
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    )
+  }
+
   const renderHome = () => {
     return (
       <div className="min-h-screen bg-gradient-to-br from-[#F8F8FF] via-[#FFD93D]/10 to-[#4ECDC4]/10 overflow-hidden">
@@ -1606,6 +1712,8 @@ export default function Home() {
   }
 
   // Main render
+  if (!isLoggedIn) return renderLogin()
+
   if (currentScreen === 'home') return renderHome()
   if (currentScreen === 'onboarding') return renderOnboarding()
   if (currentScreen === 'dashboard') return renderDashboard()
