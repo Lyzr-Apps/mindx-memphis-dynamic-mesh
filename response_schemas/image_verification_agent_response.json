@@ -1,0 +1,61 @@
+{
+  "agent_name": "Image Verification Agent",
+  "agent_id": "6985a22db37fff3a03c07c51",
+  "agent_purpose": "task_image_verification",
+  "description": "Analyzes uploaded task completion images and validates against task criteria",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "verification_status": "string",
+      "points_awarded": "number",
+      "confidence_score": "number",
+      "image_analysis": "string",
+      "task_match": "boolean",
+      "fraud_detected": "boolean",
+      "feedback_message": "string",
+      "rejection_reason": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "verification_status": "approved",
+      "points_awarded": 50,
+      "confidence_score": 0.98,
+      "image_analysis": "The photo clearly displays a person outdoors, wearing walking shoes, and a fitness tracker is visible with a reading indicating 2.1 km walked. The outdoor environment and tracker data are consistent with a recent physical activity session.",
+      "task_match": true,
+      "fraud_detected": false,
+      "feedback_message": "Great job completing your morning walk! Your photo shows clear evidence of your effort, including the distance on your fitness tracker and the outdoor setting. Keep up the healthy habits!",
+      "rejection_reason": ""
+    },
+    "metadata": {
+      "agent_name": "Image Verification Agent",
+      "timestamp": "2024-06-10T08:34:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T08:15:22.691633",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "verification_status": "approved",
+      "points_awarded": 50,
+      "confidence_score": 0.98,
+      "image_analysis": "The photo clearly displays a person outdoors, wearing walking shoes, and a fitness tracker is visible with a reading indicating 2.1 km walked. The outdoor environment and tracker data are consistent with a recent physical activity session.",
+      "task_match": true,
+      "fraud_detected": false,
+      "feedback_message": "Great job completing your morning walk! Your photo shows clear evidence of your effort, including the distance on your fitness tracker and the outdoor setting. Keep up the healthy habits!",
+      "rejection_reason": ""
+    },
+    "metadata": {
+      "agent_name": "Image Verification Agent",
+      "timestamp": "2024-06-10T08:34:00Z"
+    }
+  },
+  "test_passed": true
+}

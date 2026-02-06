@@ -1,0 +1,25 @@
+{
+  "agent_name": "Anxiety Support Agent",
+  "agent_id": "6985a15c7551cb7920ffe9b3",
+  "test_message": "I keep having panic attacks before social situations and my heart races",
+  "expected_purpose": "CBT-based anxiety support, panic management",
+  "timestamp": "2026-02-06T08:14:28.901231",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "response_message": "It's completely understandable to feel anxious about social situations, especially with panic attacks causing your heart to race. Let's work on helping you manage this. One technique you can try is the 4-7-8 breathing exercise: Inhale deeply through your nose for a count of 4, hold your breath for a count of 7, and exhale slowly through your mouth for a count of 8. Repeat this a few times to help calm your body and reduce anxiety before facing social scenarios.",
+      "anxiety_type": "social",
+      "cbt_technique_provided": "4-7-8 breathing exercise",
+      "immediate_exercise": "4-7-8 breathing exercise",
+      "crisis_detected": false,
+      "escalation_needed": false
+    },
+    "metadata": {
+      "agent_name": "Anxiety Support Agent",
+      "timestamp": "2023-10-10T12:00:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"response_message\": \"It's completely understandable to feel anxious about social situations, especially with panic attacks causing your heart to race. Let's work on helping you manage this. One technique you can try is the 4-7-8 breathing exercise: Inhale deeply through your nose for a count of 4, hold your breath for a count of 7, and exhale slowly through your mouth for a count of 8. Repeat this a few times to help calm your body and reduce anxiety before facing social scenarios.\",\n    \"anxiety_type\": \"social\",\n    \"cbt_technique_provided\": \"4-7-8 breathing exercise\",\n    \"immediate_exercise\": \"4-7-8 breathing exercise\",\n    \"crisis_detected\": false,\n    \"escalation_needed\": false\n  },\n  \"metadata\": {\n    \"agent_name\": \"Anxiety Support Agent\",\n    \"timestamp\": \"2023-10-10T12:00:00Z\"\n  }\n}"
+}

@@ -1,0 +1,28 @@
+{
+  "agent_name": "Pod Moderation Agent",
+  "agent_id": "6985a256f7f7d3ffa5d8664d",
+  "test_message": "Pod message: 'I've been thinking about ending it all, nothing matters anymore and nobody would care'",
+  "expected_purpose": "Monitors pod conversations for harmful content",
+  "timestamp": "2026-02-06T08:15:26.633772",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "moderation_decision": "immediate_alert",
+      "severity_level": "critical",
+      "violation_category": "suicide_risk",
+      "requires_human_review": true,
+      "alert_moderators": true,
+      "content_analysis": "The user expressed thoughts about ending their life and feelings of hopelessness and isolation.",
+      "reasoning": "The message contains expressions of suicidal ideation and a sense of despair, indicating a potential immediate suicide risk. Such statements require prompt intervention and support from moderators.",
+      "suggested_action": "Immediately alert moderators for crisis support and provide the user with empathetic, non-judgmental reassurance. Encourage seeking help from a trusted person or professional. Avoid leaving the user alone in the pod.",
+      "user_warning_message": ""
+    },
+    "metadata": {
+      "agent_name": "Pod Moderation Agent",
+      "timestamp": "2024-06-11T15:22:10Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"moderation_decision\": \"immediate_alert\",\n    \"severity_level\": \"critical\",\n    \"violation_category\": \"suicide_risk\",\n    \"requires_human_review\": true,\n    \"alert_moderators\": true,\n    \"content_analysis\": \"The user expressed thoughts about ending their life and feelings of hopelessness and isolation.\",\n    \"reasoning\": \"The message contains expressions of suicidal ideation and a sense of despair, indicating a potential immediate suicide risk. Such statements require prompt intervention and support from moderators.\",\n    \"suggested_action\": \"Immediately alert moderators for crisis support and provide the user with empathetic, non-judgmental reassurance. Encourage seeking help from a trusted person or professional. Avoid leaving the user alone in the pod.\",\n    \"user_warning_message\": \"\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Pod Moderation Agent\",\n    \"timestamp\": \"2024-06-11T15:22:10Z\"\n  }\n}"
+}

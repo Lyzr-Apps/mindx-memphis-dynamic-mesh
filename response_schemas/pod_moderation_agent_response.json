@@ -1,0 +1,64 @@
+{
+  "agent_name": "Pod Moderation Agent",
+  "agent_id": "6985a256f7f7d3ffa5d8664d",
+  "agent_purpose": "pod_content_moderation",
+  "description": "Monitors pod conversations in real-time and flags harmful content for safety",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "moderation_decision": "string",
+      "severity_level": "string",
+      "violation_category": "string",
+      "requires_human_review": "boolean",
+      "alert_moderators": "boolean",
+      "content_analysis": "string",
+      "reasoning": "string",
+      "suggested_action": "string",
+      "user_warning_message": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "moderation_decision": "immediate_alert",
+      "severity_level": "critical",
+      "violation_category": "suicide_risk",
+      "requires_human_review": true,
+      "alert_moderators": true,
+      "content_analysis": "The user expressed thoughts about ending their life and feelings of hopelessness and isolation.",
+      "reasoning": "The message contains expressions of suicidal ideation and a sense of despair, indicating a potential immediate suicide risk. Such statements require prompt intervention and support from moderators.",
+      "suggested_action": "Immediately alert moderators for crisis support and provide the user with empathetic, non-judgmental reassurance. Encourage seeking help from a trusted person or professional. Avoid leaving the user alone in the pod.",
+      "user_warning_message": ""
+    },
+    "metadata": {
+      "agent_name": "Pod Moderation Agent",
+      "timestamp": "2024-06-11T15:22:10Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T08:15:26.634496",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "moderation_decision": "immediate_alert",
+      "severity_level": "critical",
+      "violation_category": "suicide_risk",
+      "requires_human_review": true,
+      "alert_moderators": true,
+      "content_analysis": "The user expressed thoughts about ending their life and feelings of hopelessness and isolation.",
+      "reasoning": "The message contains expressions of suicidal ideation and a sense of despair, indicating a potential immediate suicide risk. Such statements require prompt intervention and support from moderators.",
+      "suggested_action": "Immediately alert moderators for crisis support and provide the user with empathetic, non-judgmental reassurance. Encourage seeking help from a trusted person or professional. Avoid leaving the user alone in the pod.",
+      "user_warning_message": ""
+    },
+    "metadata": {
+      "agent_name": "Pod Moderation Agent",
+      "timestamp": "2024-06-11T15:22:10Z"
+    }
+  },
+  "test_passed": true
+}

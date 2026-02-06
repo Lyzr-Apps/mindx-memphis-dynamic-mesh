@@ -1,0 +1,57 @@
+{
+  "agent_name": "Task Recommendation Agent",
+  "agent_id": "6985a1fb7551cb7920ffe9c1",
+  "test_message": "PHQ-9 score: 12 (moderate depression), GAD-7 score: 15 (moderate anxiety), identified problems: exam stress, sleep issues, social isolation",
+  "expected_purpose": "Generates personalized wellness tasks based on PHQ-9/GAD-7 scores",
+  "timestamp": "2026-02-06T08:15:19.466425",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "recommended_tasks": [
+        {
+          "task_title": "Take a 5-Minute Guided Breathing Break",
+          "task_description": "Find a quiet place, close your eyes, and follow a guided breathing exercise focusing on inhaling deeply for 4 seconds, holding for 4 seconds, and exhaling for 6 seconds.",
+          "category": "Breathing Exercises",
+          "difficulty": "easy",
+          "estimated_time": "5 minutes",
+          "points_value": 10,
+          "verification_method": "self_report",
+          "expected_benefit": "This helps reduce immediate anxiety and promotes relaxation.",
+          "personalization_reason": "Recommended to address your moderate anxiety and provide immediate stress relief."
+        },
+        {
+          "task_title": "Set a Sleep Schedule",
+          "task_description": "Choose a consistent bedtime and wake-up time to regulate your sleep. Write it down and aim to stick to it for the next week.",
+          "category": "Sleep Hygiene",
+          "difficulty": "medium",
+          "estimated_time": "10 minutes",
+          "points_value": 20,
+          "verification_method": "self_report",
+          "expected_benefit": "Establishing a regular sleep pattern can help improve sleep quality and reduce sleep issues.",
+          "personalization_reason": "This task is tailored to address your sleep problems."
+        },
+        {
+          "task_title": "Connect with a Friend",
+          "task_description": "Reach out to a friend or family member. Send a text message or make a short phone call to check in and share how you're feeling.",
+          "category": "Social Connection",
+          "difficulty": "medium",
+          "estimated_time": "15 minutes",
+          "points_value": 20,
+          "verification_method": "check_in",
+          "expected_benefit": "Connecting with others combats feelings of isolation and supports emotional well-being.",
+          "personalization_reason": "Helps to address your social isolation by promoting social interaction."
+        }
+      ],
+      "total_tasks_recommended": 3,
+      "priority_focus": "Anxiety management and social connection",
+      "encouragement_message": "Remember, small steps lead to big changes! You're doing great by seeking support."
+    },
+    "metadata": {
+      "agent_name": "Task Recommendation Agent",
+      "timestamp": "2023-10-01T12:00:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"recommended_tasks\": [\n      {\n        \"task_title\": \"Take a 5-Minute Guided Breathing Break\",\n        \"task_description\": \"Find a quiet place, close your eyes, and follow a guided breathing exercise focusing on inhaling deeply for 4 seconds, holding for 4 seconds, and exhaling for 6 seconds.\",\n        \"category\": \"Breathing Exercises\",\n        \"difficulty\": \"easy\",\n        \"estimated_time\": \"5 minutes\",\n        \"points_value\": 10,\n        \"verification_method\": \"self_report\",\n        \"expected_benefit\": \"This helps reduce immediate anxiety and promotes relaxation.\",\n        \"personalization_reason\": \"Recommended to address your moderate anxiety and provide immediate stress relief.\"\n      },\n      {\n        \"task_title\": \"Set a Sleep Schedule\",\n        \"task_description\": \"Choose a consistent bedtime and wake-up time to regulate your sleep. Write it down and aim to stick to it for the next week.\",\n        \"category\": \"Sleep Hygiene\",\n        \"difficulty\": \"medium\",\n        \"estimated_time\": \"10 minutes\",\n        \"points_value\": 20,\n        \"verification_method\": \"self_report\",\n        \"expected_benefit\": \"Establishing a regular sleep pattern can help improve sleep quality and reduce sleep issues.\",\n        \"personalization_reason\": \"This task is tailored to address your sleep problems.\"\n      },\n      {\n        \"task_title\": \"Connect with a Friend\",\n        \"task_description\": \"Reach out to a friend or family member. Send a text message or make a short phone call to check in and share how you're feeling.\",\n        \"category\": \"Social Connection\",\n        \"difficulty\": \"medium\",\n        \"estimated_time\": \"15 minutes\",\n        \"points_value\": 20,\n        \"verification_method\": \"check_in\",\n        \"expected_benefit\": \"Connecting with others combats feelings of isolation and supports emotional well-being.\",\n        \"personalization_reason\": \"Helps to address your social isolation by promoting social interaction.\"\n      }\n    ],\n    \"total_tasks_recommended\": 3,\n    \"priority_focus\": \"Anxiety management and social connection\",\n    \"encouragement_message\": \"Remember, small steps lead to big changes! You're doing great by seeking support.\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Task Recommendation Agent\",\n    \"timestamp\": \"2023-10-01T12:00:00Z\"\n  }\n}"
+}

@@ -1,0 +1,126 @@
+{
+  "nodes": [
+    {
+      "id": "main_input",
+      "type": "Input",
+      "label": "Chat with Nirvana",
+      "nodeCategory": "input"
+    },
+    {
+      "id": "nirvana_orchestrator",
+      "type": "Agent",
+      "label": "Nirvana Orchestrator",
+      "nodeCategory": "agent",
+      "agent_id": "6985a1d78ce1fc653cfdee3e"
+    },
+    {
+      "id": "academic_stress_agent",
+      "type": "Agent",
+      "label": "Academic Stress Agent",
+      "nodeCategory": "agent",
+      "agent_id": "6985a1385eb49186d63e5db8"
+    },
+    {
+      "id": "anxiety_support_agent",
+      "type": "Agent",
+      "label": "Anxiety Support Agent",
+      "nodeCategory": "agent",
+      "agent_id": "6985a15c7551cb7920ffe9b3"
+    },
+    {
+      "id": "work_life_balance_agent",
+      "type": "Agent",
+      "label": "Work-Life Balance Agent",
+      "nodeCategory": "agent",
+      "agent_id": "6985a18276d4fd436bf4b7b5"
+    },
+    {
+      "id": "cultural_context_agent",
+      "type": "Agent",
+      "label": "Cultural Context Agent",
+      "nodeCategory": "agent",
+      "agent_id": "6985a1a98ce1fc653cfdee36"
+    },
+    {
+      "id": "task_input",
+      "type": "Input",
+      "label": "Get Recommended Tasks",
+      "nodeCategory": "input"
+    },
+    {
+      "id": "task_recommendation_agent",
+      "type": "Agent",
+      "label": "Task Recommendation Agent",
+      "nodeCategory": "agent",
+      "agent_id": "6985a1fb7551cb7920ffe9c1"
+    },
+    {
+      "id": "image_input",
+      "type": "Input",
+      "label": "Submit Proof",
+      "nodeCategory": "input"
+    },
+    {
+      "id": "image_verification_agent",
+      "type": "Agent",
+      "label": "Image Verification Agent",
+      "nodeCategory": "agent",
+      "agent_id": "6985a22db37fff3a03c07c51"
+    },
+    {
+      "id": "pod_input",
+      "type": "Input",
+      "label": "Pod Messages",
+      "nodeCategory": "input"
+    },
+    {
+      "id": "pod_moderation_agent",
+      "type": "Agent",
+      "label": "Pod Moderation Agent",
+      "nodeCategory": "agent",
+      "agent_id": "6985a256f7f7d3ffa5d8664d"
+    }
+  ],
+  "edges": [
+    {
+      "source": "main_input",
+      "target": "nirvana_orchestrator"
+    },
+    {
+      "source": "nirvana_orchestrator",
+      "target": "academic_stress_agent"
+    },
+    {
+      "source": "nirvana_orchestrator",
+      "target": "anxiety_support_agent"
+    },
+    {
+      "source": "nirvana_orchestrator",
+      "target": "work_life_balance_agent"
+    },
+    {
+      "source": "nirvana_orchestrator",
+      "target": "cultural_context_agent"
+    },
+    {
+      "source": "task_input",
+      "target": "task_recommendation_agent"
+    },
+    {
+      "source": "image_input",
+      "target": "image_verification_agent"
+    },
+    {
+      "source": "pod_input",
+      "target": "pod_moderation_agent"
+    }
+  ],
+  "metadata": {
+    "platform": "mindX",
+    "total_agents": 8,
+    "manager_agents": 1,
+    "sub_agents": 4,
+    "independent_agents": 3,
+    "created": "2026-02-06T00:00:00.000Z"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "agent_name": "Work-Life Balance Agent",
+  "agent_id": "6985a18276d4fd436bf4b7b5",
+  "agent_purpose": "workplace_stress_counseling",
+  "description": "Supports workplace stress, burnout, career concerns with Indian corporate context awareness",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "response_message": "string",
+      "stress_category": "string",
+      "practical_strategies": [
+        "string"
+      ],
+      "burnout_risk_level": "string",
+      "escalation_needed": "boolean"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "response_message": "It sounds like you're experiencing significant burnout from your demanding work hours. Working 12-hour days can lead to chronic fatigue, sleep issues, and emotional detachment, which are all signs of burnout. It's important to address these feelings before they escalate further. Remember, prioritizing your well-being is essential for long-term success. Here are some strategies you might consider: 1. Set strict boundaries on your working hours and communicate them with your team. For example, you could establish a policy of not checking emails after a certain time. 2. Practice energy management by scheduling regular breaks and engaging in activities that recharge you, such as exercise or hobbies. These practices can help you manage stress and prevent further burnout.",
+      "stress_category": "burnout",
+      "practical_strategies": [
+        "Set boundaries on working hours and communicate them.",
+        "Schedule regular breaks and recharge activities."
+      ],
+      "burnout_risk_level": "high",
+      "escalation_needed": false
+    },
+    "metadata": {
+      "agent_name": "Work-Life Balance Agent",
+      "timestamp": "2023-10-01T10:00:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T08:14:45.515322",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "response_message": "It sounds like you're experiencing significant burnout from your demanding work hours. Working 12-hour days can lead to chronic fatigue, sleep issues, and emotional detachment, which are all signs of burnout. It's important to address these feelings before they escalate further. Remember, prioritizing your well-being is essential for long-term success. Here are some strategies you might consider: 1. Set strict boundaries on your working hours and communicate them with your team. For example, you could establish a policy of not checking emails after a certain time. 2. Practice energy management by scheduling regular breaks and engaging in activities that recharge you, such as exercise or hobbies. These practices can help you manage stress and prevent further burnout.",
+      "stress_category": "burnout",
+      "practical_strategies": [
+        "Set boundaries on working hours and communicate them.",
+        "Schedule regular breaks and recharge activities."
+      ],
+      "burnout_risk_level": "high",
+      "escalation_needed": false
+    },
+    "metadata": {
+      "agent_name": "Work-Life Balance Agent",
+      "timestamp": "2023-10-01T10:00:00Z"
+    }
+  },
+  "test_passed": true
+}

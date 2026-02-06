@@ -1,0 +1,84 @@
+{
+  "workflow_created": true,
+  "creation_timestamp": "2026-02-06T00:00:00.000Z",
+  "total_agents": 8,
+  "agents": {
+    "nirvana_orchestrator": {
+      "agent_id": "6985a1d78ce1fc653cfdee3e",
+      "name": "Nirvana Orchestrator",
+      "type": "Manager",
+      "provider": "OpenAI",
+      "model": "gpt-4o",
+      "trigger": "Chat with Nirvana on /nirvana",
+      "managed_agents": [
+        "6985a1385eb49186d63e5db8",
+        "6985a15c7551cb7920ffe9b3",
+        "6985a18276d4fd436bf4b7b5",
+        "6985a1a98ce1fc653cfdee36"
+      ]
+    },
+    "academic_stress_agent": {
+      "agent_id": "6985a1385eb49186d63e5db8",
+      "name": "Academic Stress Agent",
+      "type": "Sub-Agent",
+      "provider": "OpenAI",
+      "model": "gpt-4o",
+      "trigger": "Auto (via Manager)"
+    },
+    "anxiety_support_agent": {
+      "agent_id": "6985a15c7551cb7920ffe9b3",
+      "name": "Anxiety Support Agent",
+      "type": "Sub-Agent",
+      "provider": "OpenAI",
+      "model": "gpt-4o",
+      "trigger": "Auto (via Manager)"
+    },
+    "work_life_balance_agent": {
+      "agent_id": "6985a18276d4fd436bf4b7b5",
+      "name": "Work-Life Balance Agent",
+      "type": "Sub-Agent",
+      "provider": "OpenAI",
+      "model": "gpt-4o",
+      "trigger": "Auto (via Manager)"
+    },
+    "cultural_context_agent": {
+      "agent_id": "6985a1a98ce1fc653cfdee36",
+      "name": "Cultural Context Agent",
+      "type": "Sub-Agent",
+      "provider": "OpenAI",
+      "model": "gpt-4o",
+      "trigger": "Auto (via Manager)"
+    },
+    "task_recommendation_agent": {
+      "agent_id": "6985a1fb7551cb7920ffe9c1",
+      "name": "Task Recommendation Agent",
+      "type": "Independent",
+      "provider": "OpenAI",
+      "model": "gpt-4o",
+      "trigger": "Get Recommended Tasks on /task"
+    },
+    "image_verification_agent": {
+      "agent_id": "6985a22db37fff3a03c07c51",
+      "name": "Image Verification Agent",
+      "type": "Independent",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "trigger": "Submit Proof on /task"
+    },
+    "pod_moderation_agent": {
+      "agent_id": "6985a256f7f7d3ffa5d8664d",
+      "name": "Pod Moderation Agent",
+      "type": "Independent",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "trigger": "Real-time on /pod messages"
+    }
+  },
+  "workflow_structure": {
+    "total_nodes": 12,
+    "total_edges": 8,
+    "manager_agent_count": 1,
+    "sub_agent_count": 4,
+    "independent_agent_count": 3
+  }
+}

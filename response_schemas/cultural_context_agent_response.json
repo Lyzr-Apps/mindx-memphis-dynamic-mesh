@@ -1,0 +1,60 @@
+{
+  "agent_name": "Cultural Context Agent",
+  "agent_id": "6985a1a98ce1fc653cfdee36",
+  "agent_purpose": "cultural_family_counseling",
+  "description": "Handles family dynamics, relationship issues, societal pressures with regional/religious sensitivity",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "response_message": "string",
+      "issue_category": "string",
+      "suggested_approach": [
+        "string"
+      ],
+      "safety_concerns": "boolean",
+      "escalation_needed": "boolean"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "response_message": "It's understandable that you feel torn between your parents' expectations and your own feelings for someone else. In many Indian families, there is significant pressure to conform to traditional values around marriage, particularly with arranged marriages. It's important to acknowledge your feelings for your partner while considering the cultural dynamics at play. Have an open conversation with your parents about your thoughts and feelings. You might explore ways to express your perspective calmly, emphasizing your desire for happiness and compatibility in marriage. Additionally, consider seeking support from someone within your community who understands both your cultural background and your personal wishes.",
+      "issue_category": "marriage",
+      "suggested_approach": [
+        "have an open conversation with parents",
+        "seek support from trusted family members or friends"
+      ],
+      "safety_concerns": false,
+      "escalation_needed": false
+    },
+    "metadata": {
+      "agent_name": "Cultural Context Agent",
+      "timestamp": "2023-10-08T12:00:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T08:14:59.519661",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "response_message": "It's understandable that you feel torn between your parents' expectations and your own feelings for someone else. In many Indian families, there is significant pressure to conform to traditional values around marriage, particularly with arranged marriages. It's important to acknowledge your feelings for your partner while considering the cultural dynamics at play. Have an open conversation with your parents about your thoughts and feelings. You might explore ways to express your perspective calmly, emphasizing your desire for happiness and compatibility in marriage. Additionally, consider seeking support from someone within your community who understands both your cultural background and your personal wishes.",
+      "issue_category": "marriage",
+      "suggested_approach": [
+        "have an open conversation with parents",
+        "seek support from trusted family members or friends"
+      ],
+      "safety_concerns": false,
+      "escalation_needed": false
+    },
+    "metadata": {
+      "agent_name": "Cultural Context Agent",
+      "timestamp": "2023-10-08T12:00:00Z"
+    }
+  },
+  "test_passed": true
+}

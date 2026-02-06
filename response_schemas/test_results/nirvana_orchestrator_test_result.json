@@ -1,0 +1,23 @@
+{
+  "agent_name": "Nirvana Orchestrator",
+  "agent_id": "6985a1d78ce1fc653cfdee3e",
+  "test_message": "I'm feeling really stressed about my upcoming JEE exams and my parents' expectations are overwhelming me",
+  "expected_purpose": "Analyze user messages to detect stressors, route to appropriate specialist sub-agents, maintain conversation context, and escalate crisis situations",
+  "timestamp": "2026-02-06T08:16:26.656672",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "detected_stressor": "academic",
+      "routed_to_agent": "Academic Wellness Specialist",
+      "context_summary": "User is feeling stressed about upcoming JEE exams and is overwhelmed by parental expectations.",
+      "crisis_detected": false
+    },
+    "metadata": {
+      "agent_name": "Nirvana Orchestrator",
+      "timestamp": "2023-10-10T12:00:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"detected_stressor\": \"academic\",\n    \"routed_to_agent\": \"Academic Wellness Specialist\",\n    \"context_summary\": \"User is feeling stressed about upcoming JEE exams and is overwhelmed by parental expectations.\",\n    \"crisis_detected\": false\n  },\n  \"metadata\": {\n    \"agent_name\": \"Nirvana Orchestrator\",\n    \"timestamp\": \"2023-10-10T12:00:00Z\"\n  }\n}"
+}

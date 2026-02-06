@@ -1,0 +1,28 @@
+{
+  "agent_name": "Academic Stress Agent",
+  "agent_id": "6985a1385eb49186d63e5db8",
+  "test_message": "I can't focus on studying for NEET and feel like I'm going to fail",
+  "expected_purpose": "Handles academic pressure, exam anxiety, study stress with India-specific context",
+  "timestamp": "2026-02-06T08:14:14.903762",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "response_message": "It's completely understandable to feel overwhelmed and anxious about studying for NEET. Many students experience these feelings, especially with the level of pressure involved in preparing for such a competitive exam. First, I want to validate that what you're feeling is real and significant. It's okay to feel this way. Let's work together to find strategies to help you regain focus and manage this anxiety.\n\nConsider breaking your study sessions into smaller, more manageable chunks using the Pomodoro technique. This involves studying intensely for 25 minutes and then taking a 5-minute break. This can help keep your mind fresh and improve concentration. Additionally, incorporate active recall and spaced repetition techniques; they are effective for long-term retention of information. \n\nAlso, don't forget to take care of yourself. Ensure you are getting enough sleep, eating well, and taking regular breaks to prevent burnout. Practicing deep breathing exercises can help ease your mind when you start to feel anxious about failing. Remember, your worth is not determined by one exam, and taking care of your mental health is essential. You've got this!",
+      "suggested_techniques": [
+        "Pomodoro technique",
+        "active recall",
+        "spaced repetition",
+        "deep breathing exercises"
+      ],
+      "crisis_detected": false,
+      "escalation_needed": false
+    },
+    "metadata": {
+      "agent_name": "Academic Stress Agent",
+      "timestamp": "2023-10-06T15:43:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"response_message\": \"It's completely understandable to feel overwhelmed and anxious about studying for NEET. Many students experience these feelings, especially with the level of pressure involved in preparing for such a competitive exam. First, I want to validate that what you're feeling is real and significant. It's okay to feel this way. Let's work together to find strategies to help you regain focus and manage this anxiety.\\n\\nConsider breaking your study sessions into smaller, more manageable chunks using the Pomodoro technique. This involves studying intensely for 25 minutes and then taking a 5-minute break. This can help keep your mind fresh and improve concentration. Additionally, incorporate active recall and spaced repetition techniques; they are effective for long-term retention of information. \\n\\nAlso, don't forget to take care of yourself. Ensure you are getting enough sleep, eating well, and taking regular breaks to prevent burnout. Practicing deep breathing exercises can help ease your mind when you start to feel anxious about failing. Remember, your worth is not determined by one exam, and taking care of your mental health is essential. You've got this!\",\n    \"suggested_techniques\": [\"Pomodoro technique\", \"active recall\", \"spaced repetition\", \"deep breathing exercises\"],\n    \"crisis_detected\": false,\n    \"escalation_needed\": false\n  },\n  \"metadata\": {\n    \"agent_name\": \"Academic Stress Agent\",\n    \"timestamp\": \"2023-10-06T15:43:00Z\"\n  }\n}"
+}
